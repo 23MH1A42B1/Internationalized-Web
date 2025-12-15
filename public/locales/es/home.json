@@ -1,0 +1,14 @@
+{
+  "hero": {
+    "badge": "Diseño moderno reactivo",
+    "title": "Bienvenido a Nuestro Sitio Web",
+    "subtitle": "Damos vida a tus ideas con un diseño moderno.",
+    "primary": "Comenzar",
+    "secondary": "Ver Demo",
+    "stats": {
+      "clients": "Clientes Satisfechos",
+      "projects": "Proyectos Completados",
+      "satisfaction": "Satisfacción"
+    }
+  }
+}

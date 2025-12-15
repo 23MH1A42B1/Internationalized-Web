@@ -1,0 +1,8 @@
+build:
+  command: npm run build
+lint:
+  command: npm run lint
+test:
+  command: npm run test
+e2e:
+  command: npx playwright test

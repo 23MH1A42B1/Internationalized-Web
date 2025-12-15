@@ -1,0 +1,14 @@
+{
+  "hero": {
+    "badge": "Modern Reactive Design",
+    "title": "Welcome to Our Website",
+    "subtitle": "We bring your ideas to life with a modern design.",
+    "primary": "Get Started",
+    "secondary": "View Demo",
+    "stats": {
+      "clients": "Happy Clients",
+      "projects": "Completed Projects",
+      "satisfaction": "Satisfaction"
+    }
+  }
+}

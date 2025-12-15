@@ -1,26 +1,87 @@
 @import "tailwindcss";
 
+/* ================================
+   CSS VARIABLES (THEME SYSTEM)
+================================ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f9fafb;
+  --foreground: #111827;
+
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --secondary: #f97316;
+
+  --card-bg: #ffffff;
+  --border-color: #e5e7eb;
+  --muted-text: #6b7280;
+
+  --radius: 0.75rem;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
+/* ================================
+   DARK MODE
+================================ */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #020617;
+    --foreground: #e5e7eb;
+    --card-bg: #020617;
+    --border-color: #1e293b;
+    --muted-text: #94a3b8;
   }
 }
 
+/* ================================
+   BASE STYLES
+================================ */
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* ================================
+   RTL SUPPORT
+================================ */
+html[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+/* ================================
+   PRODUCT CARD
+================================ */
+.product-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 1rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ================================
+   BUTTONS
+================================ */
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  border-radius: var(--radius);
+  padding: 0.5rem 1rem;
+}
+
+html[dir="rtl"] {
+  direction: rtl;
+}
+
+html[dir="rtl"] nav ul {
+  flex-direction: row-reverse;
 }
