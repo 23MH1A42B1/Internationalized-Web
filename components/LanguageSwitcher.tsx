@@ -15,27 +15,43 @@ export default function LanguageSwitcher() {
   const pathname = usePathname();
 
   const changeLanguage = (lang: string) => {
-    // 1. Change i18n language
+    // Change i18n language
     i18n.changeLanguage(lang);
 
-    // 2. Save language
+    // Persist language
     localStorage.setItem("i18nextLng", lang);
 
-    // 3. Change URL
-    const parts = pathname.split("/");
-    parts[1] = lang;
-    router.push(parts.join("/"));
+    // Update URL locale
+    const segments = pathname.split("/");
+    segments[1] = lang;
+    router.push(segments.join("/"));
   };
 
   return (
-    <div className="flex gap-2">
-      {languages.map((l) => (
+    <div className="flex items-center gap-2">
+      {languages.map((lang) => (
         <button
-          key={l.code}
-          onClick={() => changeLanguage(l.code)}
-          className="border px-2 py-1 text-sm"
+          key={lang.code}
+          onClick={() => changeLanguage(lang.code)}
+          className="
+            px-3 py-1.5
+            rounded-md
+            border border-gray-300
+            bg-white
+            text-gray-800
+            text-sm
+            font-medium
+            shadow-sm
+            hover:bg-[#6d4aff]
+            hover:text-white
+            hover:border-[#6d4aff]
+            focus:outline-none
+            focus:ring-2
+            focus:ring-[#6d4aff]
+            transition
+          "
         >
-          {l.label}
+          {lang.label}
         </button>
       ))}
     </div>
