@@ -1,16 +1,10 @@
-import "./globals.css";
-import I18nProvider from "@/components/I18nProvider";
+import type { ReactNode } from "react";
+import "@/app/globals.css";
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
-  return (
-    <html>
-      <body>
-        <I18nProvider>{children}</I18nProvider>
-      </body>
-    </html>
-  );
+  return children;
 }

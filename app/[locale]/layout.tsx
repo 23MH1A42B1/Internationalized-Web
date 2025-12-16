@@ -1,7 +1,20 @@
-export default function LocaleLayout({
+import type { ReactNode } from "react";
+
+export default async function LocaleLayout({
   children,
+  params,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
+  params: Promise<{ locale: string }>;
 }) {
-  return <>{children}</>;
+  const { locale } = await params;
+  const dir = locale === "ar" ? "rtl" : "ltr";
+
+  return (
+    <html lang={locale} dir={dir}>
+      <body className="min-h-screen bg-white">
+        {children}
+      </body>
+    </html>
+  );
 }

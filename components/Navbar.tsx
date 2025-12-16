@@ -7,17 +7,26 @@ export default function Navbar() {
   const { t } = useTranslation("common");
 
   return (
-    <nav className="flex justify-between items-center px-8 py-4 bg-white shadow-sm">
-      <div className="flex items-center gap-2 font-bold text-xl text-[#6d4aff]">
+    <nav className="flex items-center justify-between px-8 py-4 bg-white shadow-sm">
+      {/* Logo */}
+      <div className="flex items-center gap-2 font-bold text-xl text-[#6d4aff] text-start">
         ● MultiLang
       </div>
 
-      <ul className="hidden md:flex gap-8 text-gray-700">
-        <li>{t("nav.home")}</li>
-        <li>{t("nav.about")}</li>
-        <li>{t("nav.contact")}</li>
+      {/* Navigation Links */}
+      <ul className="hidden md:flex gap-8 text-gray-700 text-start">
+        <li className="cursor-pointer hover:text-[#6d4aff] transition">
+          {t("nav.home")}
+        </li>
+        <li className="cursor-pointer hover:text-[#6d4aff] transition">
+          {t("nav.about")}
+        </li>
+        <li className="cursor-pointer hover:text-[#6d4aff] transition">
+          {t("nav.contact")}
+        </li>
       </ul>
 
+      {/* Language Switcher */}
       <LanguageSwitcher />
     </nav>
   );
