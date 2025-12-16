@@ -3,8 +3,8 @@ import { redirect } from "next/navigation";
 
 const SUPPORTED_LANGS = ["en", "es", "ar", "ja"];
 
-export default function Home() {
-  const headersList = headers();
+export default async function Home() {
+  const headersList = await headers(); // ✅ await is REQUIRED
   const acceptLanguage = headersList.get("accept-language");
 
   let detectedLang = "en"; // fallback

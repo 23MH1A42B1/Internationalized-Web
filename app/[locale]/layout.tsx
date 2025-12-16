@@ -11,10 +11,8 @@ export default async function LocaleLayout({
   const dir = locale === "ar" ? "rtl" : "ltr";
 
   return (
-    <html lang={locale} dir={dir}>
-      <body className="min-h-screen bg-white">
-        {children}
-      </body>
-    </html>
+    <div lang={locale} dir={dir}>
+      {children}
+    </div>
   );
 }
