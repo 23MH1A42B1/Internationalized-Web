@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import "@/app/globals.css";
+import HtmlDirection from "@/components/HtmlDirection";
 
 export default function RootLayout({
   children,
@@ -9,6 +10,7 @@ export default function RootLayout({
   return (
     <html>
       <body className="min-h-screen bg-white">
+        <HtmlDirection />
         {children}
       </body>
     </html>
